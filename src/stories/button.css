@@ -1,4 +1,4 @@
-.storybook-button {
+/* .storybook-button {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
@@ -9,7 +9,7 @@
 }
 .storybook-button--primary {
   color: white;
-  background-color: #1ea7fd;
+  background-color: bg-dark-grey;
 }
 .storybook-button--secondary {
   color: #333;
@@ -27,4 +27,36 @@
 .storybook-button--large {
   font-size: 16px;
   padding: 12px 24px;
-}
+} */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700;1,800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+  .btn-primarylg{
+    @apply bg-main-purple text-white rounded-lg w-btn h-lg;
+
+  }
+  .btn-primarylg-hover{
+      @apply bg-main-purple-hover text-white rounded-lg w-btn h-lg;
+  }
+  .btn-primarysm{
+    @apply  bg-main-purple text-white rounded-sm w-btn h-sm;
+  }
+
+  .btn-secondary{
+    @apply bg-btn-secondary text-main-purple rounded-sm w-btn h-sm;
+  }
+  .btn-secondary-hover{
+    @apply bg-btn-secondary-hover;
+  }
+
+  .btn-destructive{
+    @apply bg-red text-white rounded-sm w-btn h-sm;
+  }
+  .btn-destructive-hover{
+    @apply bg-red-hover;
+  }
+  }
