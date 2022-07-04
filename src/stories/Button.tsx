@@ -31,6 +31,8 @@ interface ButtonProps {
 
 }
 
+
+
 /**
  * Primary UI component for user interaction
  */
@@ -44,6 +46,8 @@ export const Button = ({
   label="button",
   ...props
 }: ButtonProps) => {
+
+
   const mode = hover ? 'hover':'';
   // const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
@@ -51,7 +55,8 @@ export const Button = ({
     {/* <button type="button"><div className='bg-main-purple text-white borderRadius-lg px-2 py-1 rounded-lg '>Hello</div></button> */}
     <button
       type="button"
-      className={[`btn-${version}`, `${mode}:btn-${version}-hover`].join(' ')}
+      className= "hover:bg-red"
+      // className={[`btn-${version}`, `${mode}:btn-${version}-hover`, 'hover:red'].join(' ')}
       // className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       // style={{ backgroundColor }}
       {...props}
