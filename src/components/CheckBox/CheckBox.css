@@ -1,0 +1,14 @@
+/* import styled from 'styled-components';
+
+
+
+
+const StyledCheckbox = styled.div`
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  background: "#F4F7FD";
+  background: ${props => props.checked ? 'salmon' : 'papayawhip'};
+  border-radius: 4px;
+  transition: all 150ms;
+` */

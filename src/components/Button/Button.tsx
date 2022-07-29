@@ -12,12 +12,12 @@ export const Button = (props: ButtonProps) => {
     variant === "primary"
       ? "bg-main-purple"
       : variant === "secondary"
-      ? "bg-main-purple/10"
+      ? "bg-btn-secondary"
       : "bg-red";
     let hover = ""
 
   console.log(buttonColor);
-  let styledClassName = `${buttonColor} rounded-lg p-2 ${hover}`;
+  let styledClassName = `${buttonColor} rounded-lg p-2 ${hover} w-btn h-lg text-white font-bold`;
   let button = (
     <button
       className={styledClassName}

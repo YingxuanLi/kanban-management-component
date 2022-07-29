@@ -36,7 +36,7 @@
 
 @layer components{
   .btn-primarylg{
-    @apply bg-main-purple text-white rounded-lg w-btn h-lg hover;
+    @apply bg-main-purple text-white rounded-lg w-btn h-lg;
 
   }
   .btn-primarylg-hover{
