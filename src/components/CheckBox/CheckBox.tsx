@@ -38,9 +38,9 @@ const Input = styled.input.attrs({ type: "checkbox" })`
 
 const Label = styled.span`
   font-size: 12px;
-  width: 22px;
+ width: 22px;
   height: 15px;
-  font-weight: 700;
+ font-weight: 700;
   font-family: "Plus Jakarta Sans";
   line-height: 15px;
   letter-spacing: 0px;
