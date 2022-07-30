@@ -43,8 +43,8 @@ const Label = styled.span`
   font-weight: 700;
 font-family: "Plus Jakarta Sans";
  line-height: 15px;
-  letter-spacing: 0px;
-  text-align: left;
+letter-spacing: 0px;
+       text-align: left;
   ${Input}:checked {
     text-decoration: line-through;
     color: rgba(0, 1, 18, 0.5);
