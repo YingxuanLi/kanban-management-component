@@ -1,4 +1,3 @@
-import React from 'react'
 import './CheckBox.css';
 import styled from 'styled-components';
 // import StyledCheckbox from './CheckBox.css';
