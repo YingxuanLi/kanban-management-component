@@ -52,7 +52,7 @@ const Label = styled.span`
 `;
 
 export default function CheckBox(CheckBoxProps: Props) {
-  const { label } = CheckBoxProps;
+  const {label} = CheckBoxProps;
   return (
     <div>
       <StyledCheckbox>
