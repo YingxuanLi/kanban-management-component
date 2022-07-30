@@ -2,7 +2,6 @@ import { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-
 function App() {
   const [count, setCount] = useState(0);
 
@@ -20,11 +19,8 @@ function App() {
           >
             count is: {count}
           </button>
-          <h1 className="font-light text-2xl text-red">React and tailwind</h1>
         </p>
-        <button className="bg-main-purple border-red-hover flex rounded-lg my-3 p-2">
-          Hello world
-        </button>
+
         <p>
           Edit... <code>App.tsx</code> and save to test HMR updates.
         </p>
