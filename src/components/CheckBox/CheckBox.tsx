@@ -1,10 +1,12 @@
+
 import './CheckBox.css';
 import styled from 'styled-components';
-type Props = {
-    version: 'Light' | 'Dark',
-    subTask: 'Idle' |'Hovered' | 'Competed'
-}
 
+type Props = {
+  version: "Light" | "Dark";
+  status: "idle" | "completed";
+  label: string;
+};
 
 const StyledCheckbox = styled.div`
   width: 350px;
@@ -12,53 +14,52 @@ const StyledCheckbox = styled.div`
   border-radius: 4px;
   display: flex;
   align-items: center;
-  background-color: #F4F7FD;
-  &:hover{
+  background-color: #f4f7fd;
+  &:hover {
     background-color: rgba(99, 95, 199, 0.25);
   }
-  Input:after{
+  Input:after {
     text-decoration: line-through;
   }
-
-`
-const Input = styled.input.attrs({type:"checkbox"})`
+`;
+const Input = styled.input.attrs({ type: "checkbox" })`
   width: 16px;
   height: 16px;
   margin: 12px;
   border: 0;
   border-color: 0;
-  box-shadow:none;
+  box-shadow: none;
   outline: 1px solid rgba(130, 143, 163, 0.25);
-  background-color: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  background-color: linear-gradient(0deg, #ffffff, #ffffff);
   border-radius: 2px;
-  &:checked{
-    color:rgba(99, 95, 199, 1);
+  &:checked {
+    color: rgba(99, 95, 199, 1);
   }
-`
+`;
 
 const Label = styled.span`
   font-size: 12px;
   width: 22px;
   height: 15px;
   font-weight: 700;
-  font-family: "Plus Jakarta Sans";
-  line-height: 15px;
+font-family: "Plus Jakarta Sans";
+ line-height: 15px;
   letter-spacing: 0px;
   text-align: left;
   ${Input}:checked {
     text-decoration: line-through;
-    color:rgba(0, 1, 18, 0.5);
+    color: rgba(0, 1, 18, 0.5);
   }
-`
+`;
 
 export default function CheckBox(CheckBoxProps: Props) {
-  
+  const { label } = CheckBoxProps;
   return (
     <div>
-        <StyledCheckbox>
-          <Input id="default-checkbox" type="checkbox" />
-          <Label>{CheckBoxProps.subTask}</Label>
-        </StyledCheckbox>
+      <StyledCheckbox>
+        <Input id="default-checkbox" type="checkbox" />
+        <Label>{label}</Label>
+      </StyledCheckbox>
     </div>
-  )
+  );
 }
