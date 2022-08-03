@@ -5,7 +5,6 @@ type Props = {}
 
 const TextInputWrapper=styled.div`
   display: inline-flex;
-  flex-direction: row;
   flex-wrap:nowrap;
   flex-direction: column;
   .label{

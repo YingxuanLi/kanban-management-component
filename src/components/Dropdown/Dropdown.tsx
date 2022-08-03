@@ -1,39 +1,77 @@
-
-
-type Props = {
-  options : {
-    value: string,
-    label: string,
-  }[],
-  onChange: () => void
-}
+import { useState } from 'react';
 import styled from 'styled-components';
+import Select from 'react-select';
 
-const Label = styled.span`
-  font-size: 12px;
-  width: 22px;
-  height: 15px;
-  font-weight: 700;
-  font-family: "Plus Jakarta Sans";
-  line-height: 15px;
-  letter-spacing: 0px;
-  text-align: left;
+const StyledSelect = styled(Select)`
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 23px;
+      letter-spacing: 0px;
+      text-align: left;
+      /* border: 1px solid rgba(130, 143, 163, 0.25); */
+      /* border: 1px solid red; */
+      height: 40px;
+      width: 350px;
 `
 
-const styledSelect= styled.select`
+
+const SelectWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-family: Plus Jakarta Sans;
+    left: 0px;
+    top: 0px;
 
 `
-function Dropdown(DropdownProps: Props) {
-  const{options, onChange}= DropdownProps;
+const Label = styled.div`
+    font-family: Plus Jakarta Sans;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin:2px;
+    font-family: Plus Jakarta Sans;
+    color: #828FA3;
+
+`
+const customStyles = {
+  option: (provided:any, state:any) => ({
+    ...provided,
+    color: '#828FA3',
+    fontWeight: state.isSelected ? "bold" : "normal",
+    border: null
+  })
+};
+
+type Props= {
+  options:{
+  value: string;
+  label: string;
+  }[],
+  onChange: ()=> void,
+  name: string
+}
+
+const Dropdown = (dropdownProps: Props)=> {
+    const [selectedOption, setSelectedOption] = useState(null);
+
   return (
-    <>
-      <select onChange={onChange}>
+    <>  
         {
-        options.map(option => 
-          <option value={option.value}>option.label</option>
-        )
+        dropdownProps.options ?
+        <SelectWrapper>
+        <Label>{dropdownProps.name}</Label>
+
+        <StyledSelect
+            styles={customStyles}
+            defaultValue={selectedOption}
+            options={dropdownProps.options}
+         />
+
+        </SelectWrapper> : null
         }
-      </select>
     </>
   )
 }
