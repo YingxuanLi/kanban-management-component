@@ -15,3 +15,9 @@ export default {
   const Template: ComponentStory<typeof CheckBox> = (args) => <CheckBox {...args} />;
 
   export const CheckBoxComponent= Template.bind({});
+
+  CheckBoxComponent.args = {
+    version: "Light",
+    status: "idle" ,
+    label: "checkbox"
+  }

@@ -6,8 +6,7 @@ type Props = {
 
 
 const TextInputWrapper=styled.div`
-  display: inline-flex;
-  flex-wrap:nowrap;
+  flex-wrap:wrap;
   flex-direction: column;
   .label{
     font-family: Plus Jakarta Sans;
@@ -27,13 +26,13 @@ const Input = styled.input.attrs({type:"text"})`
     left: 0px;
     top: 0px;
     border-radius: 4px;
-
     font-family: "Plus Jakarta Sans";
     font-size: 13px;
     font-weight: 500;
     line-height: 23px;
     letter-spacing: 0px;
-    text-align: left;
+    display:'inline-block';
+  
 
     &:focus{
       outline: none;

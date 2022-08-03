@@ -9,12 +9,16 @@ type Props = {
 };
 
 const StyledCheckbox = styled.div`
-  width: 350px;
   height: 40px;
+  width: 350px;
   border-radius: 4px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
   background-color: #f4f7fd;
+  justify-content: center;
+  align-content: flex-start;
   &:hover {
     background-color: rgba(99, 95, 199, 0.25);
   }
@@ -37,15 +41,14 @@ const Input = styled.input.attrs({ type: "checkbox" })`
   }
 `;
 
-const Label = styled.span`
+const Label = styled.div`
+  overflow-wrap: break-word;
   font-size: 12px;
-  width: 22px;
-  height: 15px;
   font-weight: 700;
-font-family: "Plus Jakarta Sans";
- line-height: 15px;
+  font-family: "Plus Jakarta Sans";
+  line-height: 15px;
+  align-self: center;
   letter-spacing: 0px;
-  text-align: left;
   ${Input}:checked {
     text-decoration: line-through;
     color: rgba(0, 1, 18, 0.5);

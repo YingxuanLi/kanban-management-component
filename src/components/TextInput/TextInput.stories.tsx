@@ -11,6 +11,6 @@ export default {
 
  //👇 Each story then reuses that template
  export const TextInputComponent = Template.bind({});
- TextInputComponent.args ={
+TextInputComponent.args ={
   label:'labeltext'
 }
