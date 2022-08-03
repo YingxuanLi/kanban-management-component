@@ -3,16 +3,16 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 
 export default {
-    title: 'Dropdown',
+    title: 'DropdownComponent',
     component: Dropdown,
   } as ComponentMeta<typeof Dropdown>;
 
 
   const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
-  export const Idle= Template.bind({});
+  export const DropdownComponent= Template.bind({});
 
-  Idle.args = {
+  DropdownComponent.args = {
     options:[{value:"done",label:"done"},{value:"doing",label:"doing"},{value:"todo",label:"todo"}],
     name: 'Dropdown'
   }
