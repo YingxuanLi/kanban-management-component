@@ -15,8 +15,3 @@ export default {
   const Template: ComponentStory<typeof CheckBox> = (args) => <CheckBox {...args} />;
 
   export const Idle= Template.bind({});
-
-  Idle.args = {
-    version: 'Light',
-    subTask: 'Idle'
-  }

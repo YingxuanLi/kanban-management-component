@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-type Props = {}
+type Props = {
+  label: string
+}
 
 
 const TextInputWrapper=styled.div`
@@ -53,10 +55,10 @@ const TextInputDiv =styled.div`
     }
 `
 
-function TextInput({}: Props) {
+function TextInput(props: Props) {
   return (
     <TextInputWrapper>
-        <label htmlFor="textInput" className='label'>TextField</label>
+        <label htmlFor="textInput" className='label'>{props.label}</label>
         <TextInputDiv data-required="(required)">
         <Input id="textInput" type="text" placeholder={"Enter task name"} required/></TextInputDiv>
     </TextInputWrapper>
