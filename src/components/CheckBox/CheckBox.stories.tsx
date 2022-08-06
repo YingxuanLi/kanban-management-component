@@ -2,7 +2,7 @@ import CheckBox from "./CheckBox";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "CheckBox",
+  title: "CheckBoxComponent",
   component: CheckBox,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -14,9 +14,10 @@ const Template: ComponentStory<typeof CheckBox> = (args) => (
   <CheckBox {...args} />
 );
 
-export const Idle = Template.bind({});
+export const CheckBoxComponent = Template.bind({});
 
-Idle.args = {
+CheckBoxComponent.args = {
   version: "Light",
-  subTask: "Idle",
+  status: "idle",
+  label: "checkbox",
 };
