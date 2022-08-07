@@ -8,10 +8,11 @@ orbs:
 
 jobs:
   build-storybook:
-    working_directory: ~/
+    working_directory: ~/repo
     docker:
       - image: circleci/node:lts
     steps:
+      - checkout
       - run:
           name: Installing Dependencies
           command: yarn 
