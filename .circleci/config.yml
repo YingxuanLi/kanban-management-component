@@ -8,7 +8,7 @@ orbs:
 
 jobs:
   build-storybook:
-    # working_directory: ~/project
+    working_directory: ~/
     docker:
       - image: circleci/node:lts
     steps:
