@@ -23,8 +23,8 @@ jobs:
       - run:
           name: Build Storybook
           command: yarn build-storybook
-      - store_artifacts:
-          path: storybook-static
+      # - store_artifacts:
+      #     path: storybook-static
       - save_cache:
           paths:
             - node_modules
