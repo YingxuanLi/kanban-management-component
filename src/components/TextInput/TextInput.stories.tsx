@@ -7,7 +7,9 @@ export default {
   component: TextInput,
 };
 
-const Template = (args: any) => <TextInput {...args} />;
+const Template: ComponentStory<typeof TextInput> = (args: any) => (
+  <TextInput {...args} />
+);
 
 //👇 Each story then reuses that template
 export const TextInputComponent = Template.bind({});
