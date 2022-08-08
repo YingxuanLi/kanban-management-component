@@ -1,7 +1,9 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@YingxuanLi/kanban-components",
+  "version": "0.0.1-beta.5",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "open http://localhost:3000 && vite",
     "build": "tsc && vite build",
