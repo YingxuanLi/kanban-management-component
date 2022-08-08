@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styled from "styled-components";
 import Select from "react-select";
 
@@ -40,9 +40,15 @@ const customStyles = {
     fontWeight: state.isSelected ? "bold" : "normal",
     backgroundColor: "none",
     border: null,
-  }),
-  menuList: (provided: any, state: any) => ({
-    ...provided,
+    ":active": {
+      backgroundColor: state.isDisabled
+        ? "white"
+        : state.isSelected
+        ? "white"
+        : state.isFocused
+        ? "white"
+        : "red",
+    },
   }),
 };
 
