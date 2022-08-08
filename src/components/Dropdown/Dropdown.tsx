@@ -38,7 +38,11 @@ const customStyles = {
     ...provided,
     color: "#828FA3",
     fontWeight: state.isSelected ? "bold" : "normal",
+    backgroundColor: "none",
     border: null,
+  }),
+  menuList: (provided: any, state: any) => ({
+    ...provided,
   }),
 };
 
