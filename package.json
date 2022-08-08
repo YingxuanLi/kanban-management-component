@@ -1,8 +1,12 @@
 {
-  "name": "@YingxuanLi/kanban-mangement-component",
-  "version": "0.0.1-beta.5",
+  "name": "@yingxuanli/kanban-mangement-component",
+  "version": "0.0.1-beta.7",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@yingxuanli:registry": "https://npm.pkg.github.com/yingxuanli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YingxuanLi/kanban-management-component"
   },
   "scripts": {
     "dev": "open http://localhost:3000 && vite",
@@ -39,11 +43,11 @@
     "@vitejs/plugin-react": "^1.3.0",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
+    "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3",
     "typescript": "^4.7.4",
-    "vite": "^2.9.13",
-    "husky": "^8.0.0"
+    "vite": "^2.9.13"
   }
 }
