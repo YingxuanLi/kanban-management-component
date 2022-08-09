@@ -11,6 +11,7 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: cimg/node:16.16.0
+    resource_class: medium
     steps:
       - checkout
       - run:
@@ -22,8 +23,8 @@ jobs:
       - run:
           name: Build Storybook
           command: yarn build-storybook
-      - store_artifacts:
-          path: storybook-static
+      # - store_artifacts:
+      #     path: storybook-static
       - save_cache:
           paths:
             - node_modules
