@@ -22,17 +22,21 @@ const StyledCheckbox = styled.div`
   }
 `;
 const Input = styled.input.attrs({ type: "checkbox" })`
+  appearance: none;
   width: 16px;
   height: 16px;
   margin: 12px;
-  border: 0;
-  border-color: 0;
+  border-color: rgba(130, 143, 163, 0.25);
   box-shadow: none;
   outline: 1px solid rgba(130, 143, 163, 0.25);
-  background-color: linear-gradient(0deg, #ffffff, #ffffff);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 2px;
-  &:checked {
+  &:hover {
     color: rgba(99, 95, 199, 1);
+    box-shadow: 0 0 20px #007a7e;
+  }
+  &:checked {
+    background-color: rgba(99, 95, 199, 1);
   }
 `;
 
@@ -45,7 +49,7 @@ const Label = styled.span`
   line-height: 15px;
   letter-spacing: 0px;
   text-align: left;
-  ${Input}:checked {
+  ${Input}:checked + & {
     text-decoration: line-through;
     color: rgba(0, 1, 18, 0.5);
   }
