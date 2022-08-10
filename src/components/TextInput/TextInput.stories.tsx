@@ -1,6 +1,6 @@
 import TextInput from "./TextInput";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import PropTypes from "prop-types";
+import React from "react";
 
 export default {
   title: "TextInputComponent",
