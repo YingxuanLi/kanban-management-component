@@ -1,5 +1,6 @@
 import "./CheckBox.css";
 import styled from "styled-components";
+import React from "react";
 // import StyledCheckbox from './CheckBox.css';
 type Props = {
   version: "Light" | "Dark";
