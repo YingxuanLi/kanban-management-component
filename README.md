@@ -1,2 +1,10 @@
 # kanban-management-component
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/YingxuanLi/kanban-management-component/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/YingxuanLi/kanban-management-component/tree/main)
+
+
+### To publish
+
+`yarn rollup`
+
+update version in package.json
+
+`npm publish`

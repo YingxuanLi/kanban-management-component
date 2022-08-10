@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-type Props = {};
+type Props = {
+  label: string;
+};
 
 const TextInputWrapper = styled.div`
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: column;
   .label {
     font-family: Plus Jakarta Sans;
@@ -18,7 +18,6 @@ const TextInputWrapper = styled.div`
     margin: 2px;
   }
 `;
-
 const Input = styled.input.attrs({ type: "text" })`
   border: 1px solid rgba(130, 143, 163, 0.25);
   height: 40px;
@@ -26,45 +25,47 @@ const Input = styled.input.attrs({ type: "text" })`
   left: 0px;
   top: 0px;
   border-radius: 4px;
-  //styleName: Body (L);
   font-family: "Plus Jakarta Sans";
   font-size: 13px;
   font-weight: 500;
   line-height: 23px;
   letter-spacing: 0px;
-  text-align: left;
-  /* &:active{
-      outline: none;
-      border: 1px solid rgba(234, 85, 85, 1);
-      color: linear-gradient(0deg, #EA5555, #EA5555),
-      linear-gradient(0deg, #FFFFFF, #FFFFFF);
-    } */
+  display: "inline-block";
+
   &:focus {
     outline: none;
     color: linear-gradient(0deg, #ea5555, #ea5555),
       linear-gradient(0deg, #ffffff, #ffffff);
     &:invalid {
-      border: 1px solid yellow;
+      border: 1px solid red;
     }
   }
 `;
 
-const errorMessage = styled.span`
-  color: red;
+const TextInputDiv = styled.div`
+  &:after {
+    content: attr(data-required);
+    border: 1px solid rgba(130, 143, 163, 0.25);
+    position: relative;
+    left: -100px;
+    visibility: hidden;
+  }
 `;
-function TextInput({}: Props) {
+
+function TextInput(props: Props) {
   return (
     <TextInputWrapper>
       <label htmlFor="textInput" className="label">
-        TextField
+        {props.label}
       </label>
-      <Input
-        id="textInput"
-        type="text"
-        placeholder={"Enter task name"}
-        required
-      />
-      <div></div>
+      <TextInputDiv data-required="(required)">
+        <Input
+          id="textInput"
+          type="text"
+          placeholder={"Enter task name"}
+          required
+        />
+      </TextInputDiv>
     </TextInputWrapper>
   );
 }

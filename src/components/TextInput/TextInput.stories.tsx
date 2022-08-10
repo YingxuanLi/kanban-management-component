@@ -1,19 +1,18 @@
 import TextInput from "./TextInput";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from "react";
 
 export default {
-  title: "TextInput",
+  title: "TextInputComponent",
   component: TextInput,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof TextInput>;
+};
 
-const Template: ComponentStory<typeof TextInput> = (args) => (
+const Template: ComponentStory<typeof TextInput> = (args: any) => (
   <TextInput {...args} />
 );
 
-export const Idle = Template.bind({});
-
-Idle.args = {};
+//👇 Each story then reuses that template
+export const TextInputComponent = Template.bind({});
+TextInputComponent.args = {
+  label: "labeltext",
+};
