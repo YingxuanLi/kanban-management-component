@@ -1,11 +1,23 @@
 import React from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { themes as themes } from "../../styles/themes";
 
-export interface ButtonProps {
+const StyledButton = styled.button`
+  background-color: ${(props) => props.theme.background};
+`;
+
+type ButtonProps = {
   label: string;
-}
-
-const Button = (props: ButtonProps) => {
-  return <button>{props.label}</button>;
+  variant: "light" | "dark";
 };
 
-export default Button;
+export default function Button(buttonProps: ButtonProps) {
+  const { variant } = buttonProps;
+  const theme = variant === "light" ? themes.light : themes.dark;
+
+  return (
+    <ThemeProvider theme={theme}>
+      <StyledButton>button</StyledButton>
+    </ThemeProvider>
+  );
+}

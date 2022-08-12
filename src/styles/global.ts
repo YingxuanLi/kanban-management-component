@@ -1,7 +1,6 @@
 import { createGlobalStyle, withTheme } from "styled-components";
-import { ThemeProps } from "./themes";
 
-const globalStyle = createGlobalStyle`
+export const globalStyle = createGlobalStyle`
     :root{
         //dark mode
         --dark--background: #2B2C37;
