@@ -15,27 +15,9 @@ export const parameters = {
   },
 };
 
-// argTypes: {
-//   variant: {
-//     options: ['dark', 'light'],
-//     control: { type: 'radio' },
-//   },
-// };
-
-// preview.js
-
-// All stories expect a theme arg
 export const argTypes = {
   variant: { options: ["light", "dark"], control: "radio" },
 };
 
 // The default value of the theme arg to all stories
 export const args = { variant: "light" };
-
-// argTypes: {
-
-//   variant: {
-//     options: ['dark', 'light'],
-//     control: { type: 'radio' },
-//   },
-// },
