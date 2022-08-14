@@ -9,7 +9,7 @@
 // };
 
 import { colors, fontSize } from "./theme-preval";
-import { opacquer } from "./theme-preval";
+import { addAlpha } from "./theme-preval";
 
 export type ThemeType = typeof lightTheme;
 
@@ -37,8 +37,8 @@ const buttonColorMap: Record<string, any> = {
     hover: colors.main_purple_hover,
   },
   secondary: {
-    idel: `${opacquer(colors.main_purple, 0.9)}`,
-    hover: `${opacquer(colors.main_purple, 0.25)}`,
+    idel: `${addAlpha(colors.main_purple, 0.1)}`,
+    hover: `${addAlpha(colors.main_purple, 0.25)}`,
   },
   destructive: {
     idel: colors.red,
@@ -57,7 +57,7 @@ export const lightTheme = {
   // BUTTON
   buttonColorMap,
   primaryButton: colors.main_purple,
-  secondaryButton: `${opacquer(colors.main_purple, 0.1)}`,
+  secondaryButton: `${addAlpha(colors.main_purple, 0.1)}`,
   destructiveButton: colors.red,
   //INPUT
 };
@@ -74,7 +74,7 @@ export const darkTheme: ThemeType = {
   //BUTTON
   buttonColorMap,
   primaryButton: colors.main_purple,
-  secondaryButton: `${opacquer(colors.main_purple, 0.1)}`,
+  secondaryButton: `${addAlpha(colors.main_purple, 0.1)}`,
   destructiveButton: colors.red,
 };
 

@@ -28,6 +28,6 @@ export const lineHeight = {
   S: "15px",
 };
 
-export const opacquer = (color: String, opacity: number) => {
-  return Color(color).opaquer(opacity);
+export const addAlpha = (color: String, opacity: number) => {
+  return Color(color).alpha(opacity).toString();
 };
