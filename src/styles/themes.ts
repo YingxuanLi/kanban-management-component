@@ -10,6 +10,9 @@
 
 import { colors, fontSize } from "./theme-preval";
 import { opacquer } from "./theme-preval";
+
+export type ThemeType = typeof lightTheme;
+
 export const themes = {
   light: {
     background: colors.white,
@@ -28,7 +31,7 @@ export const themes = {
     labelcolor: colors.white,
   },
 };
-const buttonColorMap = {
+const buttonColorMap: Record<string, any> = {
   primary: {
     idel: colors.main_purple,
     hover: colors.main_purple_hover,
@@ -59,7 +62,7 @@ export const lightTheme = {
   //INPUT
 };
 
-export const darkTheme = {
+export const darkTheme: ThemeType = {
   name: "DARK",
   background: colors.dark_grey,
   backgroundSecondary: colors.very_dark_grey,
@@ -75,6 +78,5 @@ export const darkTheme = {
   destructiveButton: colors.red,
 };
 
-type theme = typeof lightTheme;
-
-export type { theme };
+const theme = lightTheme; // set the light theme as the default.
+export default theme;

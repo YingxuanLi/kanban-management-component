@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "../../styles/theme-preval";
 
 const StyledButton = styled.button<{ buttonType: string }>`
   height: 40px;
@@ -18,7 +17,7 @@ type ButtonProps = {
 };
 
 export default function Button(buttonProps: ButtonProps) {
-  const { buttonType } = buttonProps;
+  const { buttonType, label } = buttonProps;
 
-  return <StyledButton buttonType={buttonType}>button</StyledButton>;
+  return <StyledButton buttonType={buttonType}>{label}</StyledButton>;
 }

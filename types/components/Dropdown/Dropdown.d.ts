@@ -6,7 +6,6 @@ declare type DropdownProps = {
   }[];
   onChange: () => void;
   name: string;
-  variant: "light" | "dark";
 };
 declare const Dropdown: (dropdownProps: DropdownProps) => JSX.Element;
 export default Dropdown;

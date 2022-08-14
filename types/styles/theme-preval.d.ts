@@ -1,3 +1,4 @@
+import Color from "color";
 export declare const colors: {
   main_purple: string;
   main_purple_hover: string;
@@ -24,3 +25,103 @@ export declare const lineHeight: {
   M: string;
   S: string;
 };
+export declare const opacquer: (
+  color: String,
+  opacity: number
+) => Color<
+  | string
+  | number
+  | Color<
+      | string
+      | number
+      | Color<
+          | string
+          | number
+          | Color<
+              | string
+              | number
+              | Color<
+                  | string
+                  | number
+                  | Color<
+                      | string
+                      | number
+                      | Color<
+                          | string
+                          | number
+                          | Color<
+                              | string
+                              | number
+                              | Color<
+                                  | string
+                                  | number
+                                  | Color<
+                                      | string
+                                      | number
+                                      | Color<
+                                          | string
+                                          | number
+                                          | Color<
+                                              | string
+                                              | number
+                                              | any
+                                              | ArrayLike<number>
+                                              | {
+                                                  [key: string]: any;
+                                                }
+                                            >
+                                          | ArrayLike<number>
+                                          | {
+                                              [key: string]: any;
+                                            }
+                                        >
+                                      | ArrayLike<number>
+                                      | {
+                                          [key: string]: any;
+                                        }
+                                    >
+                                  | ArrayLike<number>
+                                  | {
+                                      [key: string]: any;
+                                    }
+                                >
+                              | ArrayLike<number>
+                              | {
+                                  [key: string]: any;
+                                }
+                            >
+                          | ArrayLike<number>
+                          | {
+                              [key: string]: any;
+                            }
+                        >
+                      | ArrayLike<number>
+                      | {
+                          [key: string]: any;
+                        }
+                    >
+                  | ArrayLike<number>
+                  | {
+                      [key: string]: any;
+                    }
+                >
+              | ArrayLike<number>
+              | {
+                  [key: string]: any;
+                }
+            >
+          | ArrayLike<number>
+          | {
+              [key: string]: any;
+            }
+        >
+      | ArrayLike<number>
+      | {
+          [key: string]: any;
+        }
+    >
+  | ArrayLike<number>
+  | {
+      [key: string]: any;
+    }
+>;

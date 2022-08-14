@@ -8,7 +8,6 @@ declare const _default: ComponentMeta<
     }[];
     onChange: () => void;
     name: string;
-    variant: "light" | "dark";
   }) => JSX.Element
 >;
 export default _default;
@@ -20,6 +19,5 @@ export declare const DropdownComponent: ComponentStory<
     }[];
     onChange: () => void;
     name: string;
-    variant: "light" | "dark";
   }) => JSX.Element
 >;
