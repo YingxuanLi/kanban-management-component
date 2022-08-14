@@ -1,15 +1,10 @@
-// export interface ThemeProps {
-//   background: string;
-//   text: string;
-// }
-
-// export const darkTheme: ThemeProps = {
-//   background: "var(--dark-background)",
-//   text: "var(--dark-text)",
-// };
-
 import { colors, fontSize } from "./theme-preval";
 import { addAlpha } from "./theme-preval";
+
+interface IButtonColor {
+  idel: string;
+  hover: string;
+}
 
 export type ThemeType = typeof lightTheme;
 
@@ -31,7 +26,8 @@ export const themes = {
     labelcolor: colors.white,
   },
 };
-const buttonColorMap: Record<string, any> = {
+
+const buttonColorMap: Record<string, IButtonColor> = {
   primary: {
     idel: colors.main_purple,
     hover: colors.main_purple_hover,
@@ -56,9 +52,6 @@ export const lightTheme = {
   labelcolor: colors.medium_grey,
   // BUTTON
   buttonColorMap,
-  primaryButton: colors.main_purple,
-  secondaryButton: `${addAlpha(colors.main_purple, 0.1)}`,
-  destructiveButton: colors.red,
   //INPUT
 };
 
@@ -73,9 +66,6 @@ export const darkTheme: ThemeType = {
 
   //BUTTON
   buttonColorMap,
-  primaryButton: colors.main_purple,
-  secondaryButton: `${addAlpha(colors.main_purple, 0.1)}`,
-  destructiveButton: colors.red,
 };
 
 const theme = lightTheme; // set the light theme as the default.
