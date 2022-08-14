@@ -1,3 +1,7 @@
+import { addDecorator } from "@storybook/react";
+import { withThemesProvider } from "storybook-addon-styled-component-theme";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "../src/styles/themes";
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   backgrounds: {
@@ -5,7 +9,7 @@ export const parameters = {
     values: [
       {
         name: "light",
-        value: "#F2F2F2;",
+        value: "#F2F2F2",
       },
       {
         name: "dark",
@@ -15,9 +19,6 @@ export const parameters = {
   },
 };
 
-export const argTypes = {
-  variant: { options: ["light", "dark"], control: "radio" },
-};
-
 // The default value of the theme arg to all stories
-export const args = { variant: "light" };
+const themes = [darkTheme, lightTheme];
+addDecorator(withThemesProvider(themes), ThemeProvider);

@@ -1,3 +1,4 @@
+import Color from "color";
 export const colors = {
   main_purple: "#635FC7",
   main_purple_hover: "#A8A4FF",
@@ -25,4 +26,8 @@ export const lineHeight = {
   L: "23px",
   M: "19px",
   S: "15px",
+};
+
+export const opacquer = (color: String, opacity: number) => {
+  return Color(color).opaquer(opacity);
 };

@@ -1,15 +1,12 @@
 import { useState, useRef } from "react";
-import styled, { ThemeProps, ThemeProvider } from "styled-components";
+import styled, { ThemeProps } from "styled-components";
 import Select from "react-select";
-import { themes as themes } from "../../styles/themes";
 const StyledSelect = styled(Select)`
   font-size: 13px;
   font-weight: 500;
   line-height: 23px;
   letter-spacing: 0px;
   text-align: left;
-  /* border: 1px solid rgba(130, 143, 163, 0.25); */
-  /* border: 1px solid red; */
   height: 40px;
   width: 350px;
 `;
@@ -63,29 +60,25 @@ type DropdownProps = {
   }[];
   onChange: () => void;
   name: string;
-  variant: "light" | "dark";
 };
 
 const Dropdown = (dropdownProps: DropdownProps) => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const { variant } = dropdownProps;
-  const theme = variant === "light" ? themes.light : themes.dark;
+
   return (
     <>
-      <ThemeProvider theme={theme}>
-        {dropdownProps.options ? (
-          <SelectWrapper>
-            <Label>{dropdownProps.name}</Label>
+      {dropdownProps.options ? (
+        <SelectWrapper>
+          <Label>{dropdownProps.name}</Label>
 
-            <StyledSelect
-              styles={customStyles}
-              defaultValue={selectedOption}
-              options={dropdownProps.options}
-              theme={theme}
-            />
-          </SelectWrapper>
-        ) : null}
-      </ThemeProvider>
+          <StyledSelect
+            styles={customStyles}
+            defaultValue={selectedOption}
+            options={dropdownProps.options}
+            // theme={theme}
+          />
+        </SelectWrapper>
+      ) : null}
     </>
   );
 };

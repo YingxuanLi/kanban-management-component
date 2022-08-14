@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Buttons",
+  title: "Button",
   component: Buttons,
 } as ComponentMeta<typeof Buttons>;
 
@@ -12,9 +12,8 @@ const Template: ComponentStory<typeof Buttons> = (args) => (
   <Buttons {...args} />
 );
 
-export const ButtonPrimaryL = Template.bind({});
-// MyComponent.stories.js|jsx|ts|tsx
-
-ButtonPrimaryL.args = {
-  label: "ButtonPrimaryL",
+export const Button = Template.bind({});
+Button.args = {
+  label: "Button",
+  buttonType: "primary",
 };

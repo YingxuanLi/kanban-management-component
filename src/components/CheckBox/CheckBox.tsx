@@ -1,12 +1,8 @@
-import "./CheckBox.css";
-import styled, { ThemeProvider } from "styled-components";
-import React from "react";
-import { themes as themes } from "../../styles/themes";
+import styled from "styled-components";
 
 type Props = {
   status: "idle" | "completed";
   label: string;
-  variant: "light" | "dark";
 };
 
 const StyledCheckbox = styled.div`
@@ -59,14 +55,11 @@ const Label = styled.span`
 `;
 
 export default function CheckBox(CheckBoxProps: Props) {
-  const { label, variant } = CheckBoxProps;
-  const theme = variant === "light" ? themes.light : themes.dark;
+  const { label } = CheckBoxProps;
   return (
-    <ThemeProvider theme={theme}>
-      <StyledCheckbox>
-        <Input id="default-checkbox" type="checkbox" />
-        <Label>{label}</Label>
-      </StyledCheckbox>
-    </ThemeProvider>
+    <StyledCheckbox>
+      <Input id="default-checkbox" type="checkbox" />
+      <Label>{label}</Label>
+    </StyledCheckbox>
   );
 }

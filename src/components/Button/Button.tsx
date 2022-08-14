@@ -1,23 +1,24 @@
-import React from "react";
-import styled, { ThemeProvider } from "styled-components";
-import { themes as themes } from "../../styles/themes";
+import styled from "styled-components";
+import { colors } from "../../styles/theme-preval";
 
-const StyledButton = styled.button`
-  background-color: ${(props) => props.theme.background};
+const StyledButton = styled.button<{ buttonType: string }>`
+  height: 40px;
+  width: 255px;
+  left: 0px;
+  top: 0px;
+  border-radius: 20px;
+  background-color: ${(props) =>
+    props.theme.buttonColorMap[props.buttonType].idel};
 `;
 
 type ButtonProps = {
   label: string;
-  variant: "light" | "dark";
+  buttonType: "primary" | "secondary" | "destructive";
+  size: "S" | "L";
 };
 
 export default function Button(buttonProps: ButtonProps) {
-  const { variant } = buttonProps;
-  const theme = variant === "light" ? themes.light : themes.dark;
+  const { buttonType } = buttonProps;
 
-  return (
-    <ThemeProvider theme={theme}>
-      <StyledButton>button</StyledButton>
-    </ThemeProvider>
-  );
+  return <StyledButton buttonType={buttonType}>button</StyledButton>;
 }

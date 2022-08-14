@@ -1,27 +1,16 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import { BodyL } from "../../styles/styles";
-import { themes as themes } from "../../styles/themes";
 import { Label } from "../../styles/styles";
 type TextInputProps = {
   label: string;
-  variant: "light" | "dark";
 };
 
 const TextInputWrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
-  /* .label {
-    font-family: Plus Jakarta Sans;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 15px;
-    letter-spacing: 0px;
-    text-align: left;
-    color: rgba(130, 143, 163, 1);
-    margin: 2px;
-  } */
 `;
+
 const Input = styled.input.attrs({ type: "text" })`
   border: 1px solid rgba(130, 143, 163, 0.25);
   height: 40px;
@@ -63,26 +52,26 @@ const TextInputDiv = styled.div`
   }
 `;
 
+const TextInputLabel = styled(Label)`
+  color: ${(props) => props.theme.labelcolor};
+`;
+
 function TextInput(textInputProps: TextInputProps) {
-  const { variant } = textInputProps;
-  const theme = variant === "light" ? themes.light : themes.dark;
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <TextInputWrapper>
-          <Label className="label" style={{ color: theme.labelcolor }}>
-            {textInputProps.label}
-          </Label>
-          <TextInputDiv data-required="(required)">
-            <Input
-              id="textInput"
-              type="text"
-              placeholder={"Enter task name"}
-              required
-            />
-          </TextInputDiv>
-        </TextInputWrapper>
-      </ThemeProvider>
+      <TextInputWrapper>
+        <TextInputLabel className="label">
+          {textInputProps.label}
+        </TextInputLabel>
+        <TextInputDiv data-required="(required)">
+          <Input
+            id="textInput"
+            type="text"
+            placeholder={"Enter task name"}
+            required
+          />
+        </TextInputDiv>
+      </TextInputWrapper>
     </>
   );
 }
