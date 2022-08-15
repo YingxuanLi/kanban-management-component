@@ -1,6 +1,6 @@
 import { createGlobalStyle, withTheme } from "styled-components";
 
-export const globalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     :root{
         //dark mode
         --dark--background: #2B2C37;
@@ -21,7 +21,7 @@ export const globalStyle = createGlobalStyle`
 
     body{
         //styleName: Body (L);
-        font-family: Plus Jakarta Sans;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         font-size: 13px;
         font-weight: 500;
         line-height: 23px;
@@ -32,7 +32,6 @@ export const globalStyle = createGlobalStyle`
     //Heading(XL)
     h1{
         //styleName: Heading (XL);
-        font-family: Plus Jakarta Sans;
         font-size: 24px;
         font-weight: 700;
         line-height: 30px;

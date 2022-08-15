@@ -4,13 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 export default {
   title: "CheckBoxComponent",
   component: CheckBox,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    variant: {
-      options: ["dark", "light"],
-      control: { type: "radio" },
-    },
-  },
 } as ComponentMeta<typeof CheckBox>;
 
 const Template: ComponentStory<typeof CheckBox> = (args) => (

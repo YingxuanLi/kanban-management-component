@@ -8,26 +8,7 @@ interface IButtonColor {
 
 export type ThemeType = typeof lightTheme;
 
-export const themes = {
-  light: {
-    background: colors.white,
-    backgroundSecondary: colors.white,
-    checkbox: colors.light_grey,
-    checkboxHover: colors.main_purple,
-    color: colors.black,
-    labelcolor: colors.medium_grey,
-  },
-  dark: {
-    background: colors.dark_grey,
-    backgroundSecondary: colors.very_dark_grey,
-    checkbox: colors.very_dark_grey,
-    checkboxHover: colors.main_purple,
-    color: colors.white,
-    labelcolor: colors.white,
-  },
-};
-
-const buttonColorMap: Record<string, IButtonColor> = {
+const buttonBackgroundMap: Record<string, IButtonColor> = {
   primary: {
     idel: colors.main_purple,
     hover: colors.main_purple_hover,
@@ -51,7 +32,8 @@ export const lightTheme = {
   color: colors.black,
   labelcolor: colors.medium_grey,
   // BUTTON
-  buttonColorMap,
+  buttonBackgroundMap,
+
   //INPUT
 };
 
@@ -65,7 +47,7 @@ export const darkTheme: ThemeType = {
   labelcolor: colors.white,
 
   //BUTTON
-  buttonColorMap,
+  buttonBackgroundMap,
 };
 
 const theme = lightTheme; // set the light theme as the default.
