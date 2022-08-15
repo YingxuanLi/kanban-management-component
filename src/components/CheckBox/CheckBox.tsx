@@ -43,7 +43,6 @@ const Label = styled.span`
   width: 22px;
   height: 15px;
   font-weight: 700;
-  font-family: "Plus Jakarta Sans";
   line-height: 15px;
   letter-spacing: 0px;
   text-align: left;

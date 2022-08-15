@@ -30,7 +30,7 @@ export const lightTheme = {
   checkbox: colors.light_grey,
   checkboxHover: colors.main_purple,
   color: colors.black,
-  labelcolor: colors.medium_grey,
+  labelColor: colors.medium_grey,
   // BUTTON
   buttonBackgroundMap,
 
@@ -44,7 +44,7 @@ export const darkTheme: ThemeType = {
   checkbox: colors.very_dark_grey,
   checkboxHover: colors.main_purple,
   color: colors.white,
-  labelcolor: colors.white,
+  labelColor: colors.white,
 
   //BUTTON
   buttonBackgroundMap,

@@ -4,8 +4,6 @@ import { colors } from "../../styles/theme-preval";
 const StyledButton = styled.button<{ buttonType: string; size: string }>`
   height: ${(props) => (props.size === "Small" ? "40px" : "48px")};
   width: 255px;
-  left: 0px;
-  top: 0px;
   font-weight: 700;
   border: none;
   border-radius: ${(props) => (props.size === "Small" ? "20px" : "24px")};
@@ -15,6 +13,10 @@ const StyledButton = styled.button<{ buttonType: string; size: string }>`
     props.buttonType === "secondary" ? colors.main_purple : colors.white};
   size: ${(props) => (props.size === "Small" ? "13px" : "15px")};
   line-height: ${(props) => (props.size === "Small" ? "23px" : "18.9px")};
+  &:hover {
+    background-color: ${(props) =>
+      props.theme.buttonBackgroundMap[props.buttonType].hover};
+  }
 `;
 
 type ButtonProps = {

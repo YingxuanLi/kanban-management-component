@@ -13,15 +13,17 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     *{
+        font-family: 'Plus Jakarta Sans', sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         outline:0;
+        left: 0px;
+        top: 0px;
     }
 
     body{
         //styleName: Body (L);
-        font-family: 'Plus Jakarta Sans', sans-serif;
         font-size: 13px;
         font-weight: 500;
         line-height: 23px;
