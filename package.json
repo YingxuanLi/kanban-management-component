@@ -14,7 +14,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "pre-commit": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "convert-svg": "npx @svgr/cli --typescript --out-dir icons --ignore-existing -- svg"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json}": [
