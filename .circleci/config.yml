@@ -25,10 +25,10 @@ jobs:
           command: yarn build-storybook
       # - store_artifacts:
       #     path: storybook-static
-      - save_cache:
-          paths:
-            - node_modules
-          key: cache-{{ checksum "package.json" }}
+      # - save_cache:
+      #     paths:
+      #       - node_modules
+      #     key: cache-{{ checksum "package.json" }}
   
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
