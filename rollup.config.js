@@ -3,7 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import dts from "rollup-plugin-dts";
-
+import analyze from "rollup-plugin-analyzer";
 //NEW
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
@@ -28,14 +28,20 @@ export default [
     plugins: [
       // NEW
       peerDepsExternal(),
-
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({
+        exclude: [
+          /\.test.((js|jsx|ts|tsx))$/,
+          /\.stories.((js|jsx|ts|tsx|mdx))$/,
+        ],
+        tsconfig: "./tsconfig.json",
+      }),
       postcss(),
 
       // NEW
       terser(),
+      analyze({ summaryOnly: true }),
     ],
   },
   {
