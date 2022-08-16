@@ -22,15 +22,15 @@ export const GlobalStyle = createGlobalStyle`
         top: 0px;
     }
 
-    bodyL{
+    /* bodyL{
         //styleName: Body (L);
         font-size: 13px;
         font-weight: 500;
         line-height: 23px;
         letter-spacing: 0px;
         letter-spacing: 0px;
-    }
-    bodyM{
+    } */
+    body{
         //styleName: Body (M);
         font-size: 12px;
         font-weight: 700;
@@ -67,6 +67,6 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 700;
         line-height: 15px;
         text-align: left;
-        letter-spacing: 2.4000000953674316px;
+        letter-spacing: 2.4px;
     }
 `;
