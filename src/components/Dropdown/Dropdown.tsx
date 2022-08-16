@@ -1,15 +1,12 @@
 import { useState, useRef } from "react";
-import styled from "styled-components";
+import styled, { ThemeProps } from "styled-components";
 import Select from "react-select";
-
 const StyledSelect = styled(Select)`
   font-size: 13px;
   font-weight: 500;
   line-height: 23px;
   letter-spacing: 0px;
   text-align: left;
-  /* border: 1px solid rgba(130, 143, 163, 0.25); */
-  /* border: 1px solid red; */
   height: 40px;
   width: 350px;
 `;
@@ -38,7 +35,7 @@ const customStyles = {
     ...provided,
     color: "#828FA3",
     fontWeight: state.isSelected ? "bold" : "normal",
-    backgroundColor: "none",
+    backgroundColor: "white",
     border: null,
     ":active": {
       backgroundColor: state.isDisabled
@@ -50,9 +47,13 @@ const customStyles = {
         : "red",
     },
   }),
+  menu: (provided: any, state: any) => ({
+    ...provided,
+    backgroundColor: "white",
+  }),
 };
 
-type Props = {
+type DropdownProps = {
   options: {
     value: string;
     label: string;
@@ -61,7 +62,7 @@ type Props = {
   name: string;
 };
 
-const Dropdown = (dropdownProps: Props) => {
+const Dropdown = (dropdownProps: DropdownProps) => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   return (
@@ -74,6 +75,7 @@ const Dropdown = (dropdownProps: Props) => {
             styles={customStyles}
             defaultValue={selectedOption}
             options={dropdownProps.options}
+            // theme={theme}
           />
         </SelectWrapper>
       ) : null}
