@@ -43,11 +43,17 @@ export default function Button(buttonProps: ButtonProps) {
   const { buttonType, label, size, showIcons } = buttonProps;
 
   const IconDimension = size === "small" ? 13 : 15;
+  const IconColor =
+    buttonType === "secondary" ? colors.main_purple : colors.white;
   return (
     <StyledButton buttonType={buttonType} size={size}>
       <div style={WrapperStyle}>
         {showIcons ? (
-          <IconBoard style={IconBoardStyle} dimension={IconDimension} />
+          <IconBoard
+            style={IconBoardStyle}
+            dimension={IconDimension}
+            color={IconColor}
+          />
         ) : null}
         <span>{label}</span>
       </div>
