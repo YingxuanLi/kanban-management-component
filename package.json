@@ -15,7 +15,7 @@
     "build-storybook": "build-storybook",
     "pre-commit": "lint-staged",
     "prepare": "husky install",
-    "convert-svg": "npx @svgr/cli --typescript --out-dir icons --ignore-existing -- svg"
+    "convert-svg": "npx @svgr/cli --typescript --out-dir src/icons --ignore-existing -- src/svg"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json}": [
