@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IconBoard } from "../../../icons";
 import { colors } from "../../styles/theme-preval";
 
 const StyledButton = styled.button<{ buttonType: string; size: string }>`
@@ -17,20 +18,39 @@ const StyledButton = styled.button<{ buttonType: string; size: string }>`
     background-color: ${(props) =>
       props.theme.buttonBackgroundMap[props.buttonType].hover};
   }
+  align-items: center;
 `;
+
+const IconBoardStyle = {
+  margin: "0px 5px 0px 5px",
+  backgroundSize: "12px 12px",
+};
+
+const WrapperStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 type ButtonProps = {
   label: string;
   buttonType: "primary" | "secondary" | "destructive";
   size: "small" | "large";
+  showIcons: boolean;
 };
 
 export default function Button(buttonProps: ButtonProps) {
-  const { buttonType, label, size } = buttonProps;
+  const { buttonType, label, size, showIcons } = buttonProps;
 
+  const IconDimension = size === "small" ? 13 : 15;
   return (
     <StyledButton buttonType={buttonType} size={size}>
-      {label}
+      <div style={WrapperStyle}>
+        {showIcons ? (
+          <IconBoard style={IconBoardStyle} dimension={IconDimension} />
+        ) : null}
+        <span>{label}</span>
+      </div>
     </StyledButton>
   );
 }
