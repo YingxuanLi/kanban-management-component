@@ -1,9 +1,6 @@
-import "./CheckBox.css";
 import styled from "styled-components";
-import React from "react";
-// import StyledCheckbox from './CheckBox.css';
+
 type Props = {
-  version: "Light" | "Dark";
   status: "idle" | "completed";
   label: string;
 };
@@ -14,7 +11,7 @@ const StyledCheckbox = styled.div`
   border-radius: 4px;
   display: flex;
   align-items: center;
-  background-color: #f4f7fd;
+  background-color: ${(props) => props.theme.checkbox};
   &:hover {
     background-color: rgba(99, 95, 199, 0.25);
   }
@@ -33,7 +30,7 @@ const Input = styled.input.attrs({ type: "checkbox" })`
   background-color: rgba(255, 255, 255, 1);
   border-radius: 2px;
   &:hover {
-    color: rgba(99, 95, 199, 1);
+    color: ${(props) => props.theme.checkboxHover};
     box-shadow: 0 0 20px #007a7e;
   }
   &:checked {
@@ -46,24 +43,22 @@ const Label = styled.span`
   width: 22px;
   height: 15px;
   font-weight: 700;
-  font-family: "Plus Jakarta Sans";
   line-height: 15px;
   letter-spacing: 0px;
   text-align: left;
+  color: ${(props) => props.theme.color};
   ${Input}:checked + & {
     text-decoration: line-through;
-    color: rgba(0, 1, 18, 0.5);
+    opacity: 50%;
   }
 `;
 
 export default function CheckBox(CheckBoxProps: Props) {
   const { label } = CheckBoxProps;
   return (
-    <div>
-      <StyledCheckbox>
-        <Input id="default-checkbox" type="checkbox" />
-        <Label>{label}</Label>
-      </StyledCheckbox>
-    </div>
+    <StyledCheckbox>
+      <Input id="default-checkbox" type="checkbox" />
+      <Label>{label}</Label>
+    </StyledCheckbox>
   );
 }
