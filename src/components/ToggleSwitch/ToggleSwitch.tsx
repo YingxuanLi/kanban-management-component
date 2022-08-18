@@ -1,7 +1,6 @@
 import styled, { useTheme } from "styled-components";
 import SvgIconLightTheme from "../../../icons/IconLightTheme";
 import SvgIconDarkTheme from "../../../icons/IconDarkTheme";
-import { useState } from "react";
 import theme from "../../styles/themes";
 import { lightTheme, darkTheme } from "../../styles/themes";
 const ToggleSwitchBox = styled.div`
@@ -52,30 +51,17 @@ const Input = styled.input`
 
   &:checked + ${Swicth} {
     background-color: #635fc7;
-    /* justify-content: flex-end; */
     &:before {
       animation-duration: 3s;
       transform: translate(20px);
     }
   }
-  &:checked + ${ToggleSwitchBox} {
-  }
 `;
-
-// interface ToggleSwitchProps {
-//     setTheme: React.Dispatch<React.SetStateAction<typeof theme>>;
-// }
 
 const ToggleSwitch = () => {
   const currentTheme = useTheme();
-  const themeAfterSwitch =
-    currentTheme.name === "DARK" ? lightTheme : darkTheme;
-  console.log(theme);
-  // toggleSwitchProps: {
-  //     function switchTheme(){
-  //         toggleSwitchProps.setTheme(themeAfterSwitch);
-  //     }
-  // }
+  //   console.log(theme);
+
   return (
     <ToggleSwitchBox>
       <SvgIconLightTheme dimension={14} color="#828FA3" />
@@ -85,7 +71,6 @@ const ToggleSwitch = () => {
       </Label>
 
       <SvgIconDarkTheme dimension={14} color="#828FA3" />
-      {/* <button onClick={switchTheme}></button> */}
     </ToggleSwitchBox>
   );
 };
