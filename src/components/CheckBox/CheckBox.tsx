@@ -11,7 +11,7 @@ const StyledCheckbox = styled.div`
   border-radius: 4px;
   display: flex;
   align-items: center;
-  background-color: ${(props) => props.theme.checkbox};
+  background-color: ${(props) => props.theme.backgroundTertiary};
   &:hover {
     background-color: rgba(99, 95, 199, 0.25);
   }

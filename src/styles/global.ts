@@ -18,8 +18,8 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline:0;
-        left: 0px;
-        top: 0px;
+        /* left: 0px;
+        top: 0px; */
     }
 
     /* bodyL{
