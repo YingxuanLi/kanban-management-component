@@ -1,4 +1,3 @@
-import React from "react";
 import { IconHideSidebar } from "../../../icons";
 import styled from "styled-components";
 import { colors } from "../../styles/theme-preval";
