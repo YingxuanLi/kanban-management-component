@@ -6,7 +6,7 @@
     "url": "https://github.com/YingxuanLi/kanban-management-component"
   },
   "scripts": {
-    "rollup": "rollup -c",
+    "rollup": " rm -rf dist && rollup -c",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -63,6 +63,7 @@
     "storybook-addon-styled-component-theme": "^2.0.0",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.5",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.7.4",
     "vite": "^2.9.13"
   },

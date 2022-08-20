@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { IconBoard } from "../../../icons";
-import { colors } from "../../styles/theme-preval";
+import { IconBoard } from "icons";
+import { colors } from "styles/theme-preval";
 
 const StyledButton = styled.button<{ buttonType: string; size: string }>`
   height: ${(props) => (props.size === "small" ? "40px" : "48px")};
