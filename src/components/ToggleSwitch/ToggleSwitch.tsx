@@ -1,8 +1,7 @@
 import styled, { useTheme } from "styled-components";
-import SvgIconLightTheme from "../../../icons/IconLightTheme";
-import SvgIconDarkTheme from "../../../icons/IconDarkTheme";
-import theme from "../../styles/themes";
-import { lightTheme, darkTheme } from "../../styles/themes";
+import SvgIconLightTheme from "icons/IconLightTheme";
+import SvgIconDarkTheme from "icons/IconDarkTheme";
+
 const ToggleSwitchBox = styled.div`
   display: flex;
   justify-content: center;

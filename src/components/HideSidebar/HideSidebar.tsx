@@ -1,6 +1,6 @@
-import { IconHideSidebar } from "../../../icons";
+import { IconHideSidebar } from "icons";
 import styled from "styled-components";
-import { colors } from "../../styles/theme-preval";
+import { colors } from "styles/theme-preval";
 const FlexRowWrapper = styled.div`
   display: flex;
   flex-direction: row;
