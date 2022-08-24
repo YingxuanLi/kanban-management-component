@@ -16,13 +16,13 @@ jobs:
       - checkout
       - run: 
           name: compile TypeScript
-          command: npm uninstall tsc && npx tsc
+          command: npx tsc
       - run:
           name: Installing Dependencies
           command: yarn 
-      # - run:
-      #     name: Build Storybook
-      #     command: yarn build-storybook
+      - run:
+          name: Build Storybook
+          command: yarn build-storybook
       - run: 
           name: publish storybook
           command: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
