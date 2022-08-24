@@ -1,8 +1,8 @@
 # kanban-management-component storybook
 #### The organized UI systems built by storybook in preparing for kanban-management-component project
 
-[![<ORG_NAME>](https://circleci.com/gh/YingxuanLi/kanban-management-component.svg?style=svg)](https://app.circleci.com/pipelines/github/YingxuanLi/kanban-management-component/67/workflows/b2a52520-6d91-4fb2-b02d-f53c68d4ec25/jobs/69/steps)
-This is a organized UI systems to the [Kanban task management web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/kanban-task-management-web-app-wgQLt-HlbB).
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/YingxuanLi/kanban-management-component/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/YingxuanLi/kanban-management-component/tree/main)
+#### This is a organized UI systems to the [Kanban task management web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/kanban-task-management-web-app-wgQLt-HlbB).
 
 ## Features
 
