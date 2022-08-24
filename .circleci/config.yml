@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run: 
           name: compile TypeScript
-          command: npx tsc
+          command: yarn add tsc && tsc 
       - run:
           name: Installing Dependencies
           command: yarn 
