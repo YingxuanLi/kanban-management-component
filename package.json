@@ -3,7 +3,7 @@
   "version": "0.0.1-beta.26",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YingxuanLi/kanban-management-component"
+    "url": "git+https://github.com/YingxuanLi/kanban-management-component.git"
   },
   "scripts": {
     "rollup": " rm -rf dist && rollup -c",
@@ -12,14 +12,17 @@
     "build-storybook": "build-storybook",
     "pre-commit": "lint-staged",
     "prepare": "husky install",
-    "convert-svg": "npx @svgr/cli --typescript --out-dir src/icons --ignore-existing -- src/svg"
+    "convert-svg": "npx @svgr/cli --typescript --out-dir src/icons --ignore-existing -- src/svg",
+    "chromatic": "npx chromatic --project-token=2a378e3dee2d"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json}": [
       "npx prettier --write"
     ]
   },
-  "author": "YOUR_NAME",
+  "author": {
+    "name": "YOUR_NAME"
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -43,6 +46,7 @@
     "@types/styled-components": "^5.1.25",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.7.4",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.0",
@@ -81,5 +85,11 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/YingxuanLi/kanban-management-component/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/YingxuanLi/kanban-management-component#readme",
+  "_id": "@yingxuanli/kanban-mangement-component@0.0.1-beta.26"
 }
