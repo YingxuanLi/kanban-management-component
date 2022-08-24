@@ -20,21 +20,14 @@ jobs:
       - run:
           name: Installing Dependencies
           command: yarn 
-      - run:
-          name: Build Storybook
-          command: yarn build-storybook
+      # - run:
+      #     name: Build Storybook
+      #     command: yarn build-storybook
+      - run: 
+          name: publish storybook
+          command: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
 
-    chromatic-deployment:
-      docker:
-        - image: cimg/node:16.16.0
-      working_directory: ~/repo
-      steps:
-        - checkout
-        - run: 
-            name: publish storybook
-            command: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
 
-  
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -42,6 +35,6 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-storybook
-      - chromatic-deployment
+
 
 
