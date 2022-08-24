@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     // Default
     "target": "ESNext",
     "esModuleInterop": true,
@@ -17,5 +18,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
-  }
+  },
+  "include": ["src"]
 }

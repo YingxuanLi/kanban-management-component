@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { colors } from "../../styles/theme-preval";
+import { IconBoard } from "icons";
+import { colors } from "styles/theme-preval";
 
 const StyledButton = styled.button<{ buttonType: string; size: string }>`
   height: ${(props) => (props.size === "small" ? "40px" : "48px")};
@@ -17,20 +18,47 @@ const StyledButton = styled.button<{ buttonType: string; size: string }>`
     background-color: ${(props) =>
       props.theme.buttonBackgroundMap[props.buttonType].hover};
   }
+  align-items: center;
 `;
 
-type ButtonProps = {
+const IconBoardStyle = {
+  margin: "0px 5px 0px 5px",
+  backgroundSize: "12px 12px",
+};
+
+const WrapperStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+interface ButtonProps {
   label: string;
   buttonType: "primary" | "secondary" | "destructive";
   size: "small" | "large";
-};
+  showIcons?: boolean;
+}
 
 export default function Button(buttonProps: ButtonProps) {
-  const { buttonType, label, size } = buttonProps;
+  const { buttonType, label, size, showIcons } = buttonProps;
+  const IconDimension = size === "small" ? 13 : 15;
+  const IconColor =
+    buttonType === "secondary" ? colors.main_purple : colors.white;
+  const defaultshowIcons =
+    buttonProps.showIcons !== undefined ? buttonProps.showIcons : false;
 
   return (
     <StyledButton buttonType={buttonType} size={size}>
-      {label}
+      <div style={WrapperStyle}>
+        {defaultshowIcons ? (
+          <IconBoard
+            style={IconBoardStyle}
+            dimension={IconDimension}
+            color={IconColor}
+          />
+        ) : null}
+        <span>{label}</span>
+      </div>
     </StyledButton>
   );
 }

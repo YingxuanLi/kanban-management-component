@@ -14,4 +14,5 @@ export const ButtonComponent = Template.bind({});
 ButtonComponent.args = {
   label: "Button",
   buttonType: "primary",
+  showIcons: true,
 };
