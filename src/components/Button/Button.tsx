@@ -37,26 +37,26 @@ interface ButtonProps {
   buttonType: "primary" | "secondary" | "destructive";
   size: "small" | "large";
   showIcons?: boolean;
+  className?: string;
 }
 
 export default function Button(buttonProps: ButtonProps) {
-  const { buttonType, label, size, showIcons } = buttonProps;
+  const { buttonType, label, size, showIcons, className } = buttonProps;
   const IconDimension = size === "small" ? 13 : 15;
   const IconColor =
     buttonType === "secondary" ? colors.main_purple : colors.white;
-  const defaultshowIcons =
-    buttonProps.showIcons !== undefined ? buttonProps.showIcons : false;
+  const defaultshowIcons = showIcons !== undefined ? showIcons : false;
 
   return (
-    <StyledButton buttonType={buttonType} size={size}>
+    <StyledButton buttonType={buttonType} size={size} className={className}>
       <div style={WrapperStyle}>
-        {defaultshowIcons ? (
+        {defaultshowIcons && (
           <IconBoard
             style={IconBoardStyle}
             dimension={IconDimension}
             color={IconColor}
           />
-        ) : null}
+        )}
         <span>{label}</span>
       </div>
     </StyledButton>
