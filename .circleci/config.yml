@@ -14,9 +14,6 @@ jobs:
     resource_class: large
     steps:
       - checkout
-      - run: 
-          name: compile TypeScript
-          command: npx tsc
       - run:
           name: Installing Dependencies
           command: yarn 
