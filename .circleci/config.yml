@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run: 
           name: compile TypeScript
-          command: npx tsc
+          command: npm uninstall tsc && npx tsc
       - run:
           name: Installing Dependencies
           command: yarn 
