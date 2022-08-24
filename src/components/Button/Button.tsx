@@ -32,23 +32,25 @@ const WrapperStyle = {
   justifyContent: "center",
 };
 
-type ButtonProps = {
+interface ButtonProps {
   label: string;
   buttonType: "primary" | "secondary" | "destructive";
   size: "small" | "large";
-  showIcons: boolean;
-};
+  showIcons?: boolean;
+}
 
 export default function Button(buttonProps: ButtonProps) {
   const { buttonType, label, size, showIcons } = buttonProps;
-
   const IconDimension = size === "small" ? 13 : 15;
   const IconColor =
     buttonType === "secondary" ? colors.main_purple : colors.white;
+  const defaultshowIcons =
+    buttonProps.showIcons !== undefined ? buttonProps.showIcons : false;
+
   return (
     <StyledButton buttonType={buttonType} size={size}>
       <div style={WrapperStyle}>
-        {showIcons ? (
+        {defaultshowIcons ? (
           <IconBoard
             style={IconBoardStyle}
             dimension={IconDimension}
