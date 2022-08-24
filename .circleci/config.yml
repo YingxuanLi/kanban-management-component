@@ -7,7 +7,7 @@ orbs:
   node: circleci/node@4.7
 
 jobs:
-  build-storybook:
+  build-and-publish-storybook:
     working_directory: ~/repo
     docker:
       - image: cimg/node:16.16.0
@@ -23,12 +23,11 @@ jobs:
       - run:
           name: Build Storybook
           command: yarn build-storybook
-      # - store_artifacts:
-      #     path: storybook-static
-      # - save_cache:
-      #     paths:
-      #       - node_modules
-      #     key: cache-{{ checksum "package.json" }}
+      - run:
+          name: publish storybook
+          command: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
+
+# Workflows here
   
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -36,6 +35,6 @@ workflows:
   build-storybook: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-      - build-storybook
+      - build-and-publish-storybook
 
 
