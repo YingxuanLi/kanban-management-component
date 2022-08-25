@@ -2,18 +2,18 @@ import styled from "styled-components";
 import { IconBoard } from "icons";
 import { colors } from "styles/theme-preval";
 
-const StyledButton = styled.button<{ buttonType: string; size: string }>`
-  height: ${(props) => (props.size === "small" ? "40px" : "48px")};
+const StyledButton = styled.button<{ buttonType: string; small?: boolean }>`
+  height: ${(props) => (props.small ? "40px" : "48px")};
   width: 255px;
   font-weight: 700;
   border: none;
-  border-radius: ${(props) => (props.size === "small" ? "20px" : "24px")};
+  border-radius: ${(props) => (props.small ? "20px" : "24px")};
   background-color: ${(props) =>
     props.theme.buttonBackgroundMap[props.buttonType].idel};
   color: ${(props) =>
     props.buttonType === "secondary" ? colors.main_purple : colors.white};
-  size: ${(props) => (props.size === "small" ? "13px" : "15px")};
-  line-height: ${(props) => (props.size === "small" ? "23px" : "18.9px")};
+  size: ${(props) => (props.small ? "13px" : "15px")};
+  line-height: ${(props) => (props.small ? "23px" : "18.9px")};
   &:hover {
     background-color: ${(props) =>
       props.theme.buttonBackgroundMap[props.buttonType].hover};
@@ -35,28 +35,28 @@ const Wrapper = styled.div`
 interface ButtonProps {
   label: string;
   buttonType: "primary" | "secondary" | "destructive";
-  size: "small" | "large";
+  small?: boolean;
   showIcons?: boolean;
+  className?: string;
 }
 
 export default function Button(buttonProps: ButtonProps) {
-  const { buttonType, label, size, showIcons } = buttonProps;
-  const IconDimension = size === "small" ? 13 : 15;
+  const { buttonType, label, showIcons, className, small } = buttonProps;
+  const IconDimension = small ? 13 : 15;
   const IconColor =
     buttonType === "secondary" ? colors.main_purple : colors.white;
-  const defaultshowIcons =
-    buttonProps.showIcons !== undefined ? buttonProps.showIcons : false;
+  const defaultshowIcons = showIcons !== undefined ? showIcons : false;
 
   return (
-    <StyledButton buttonType={buttonType} size={size}>
+    <StyledButton buttonType={buttonType} className={className} small={small}>
       <Wrapper>
-        {defaultshowIcons ? (
+        {defaultshowIcons && (
           <IconBoard
             style={IconBoardStyle}
             dimension={IconDimension}
             color={IconColor}
           />
-        ) : null}
+        )}
         <span>{label}</span>
       </Wrapper>
     </StyledButton>
