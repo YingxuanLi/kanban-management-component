@@ -26,11 +26,11 @@ const IconBoardStyle = {
   backgroundSize: "12px 12px",
 };
 
-const WrapperStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
+const Wrapper = styled.div`
+  display: "flex";
+  alignitems: "center";
+  justifycontent: "center";
+`;
 
 interface ButtonProps {
   label: string;
@@ -49,7 +49,7 @@ export default function Button(buttonProps: ButtonProps) {
 
   return (
     <StyledButton buttonType={buttonType} size={size}>
-      <div style={WrapperStyle}>
+      <Wrapper>
         {defaultshowIcons ? (
           <IconBoard
             style={IconBoardStyle}
@@ -58,7 +58,7 @@ export default function Button(buttonProps: ButtonProps) {
           />
         ) : null}
         <span>{label}</span>
-      </div>
+      </Wrapper>
     </StyledButton>
   );
 }

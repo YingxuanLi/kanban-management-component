@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Label } from "../../styles/styles";
 type TextInputProps = {
-  label: string;
+  label?: string;
+  placeholder?: string;
 };
 
 const TextInputWrapper = styled.div`
@@ -12,7 +13,7 @@ const TextInputWrapper = styled.div`
 const Input = styled.input.attrs({ type: "text" })`
   border: 1px solid rgba(130, 143, 163, 0.25);
   height: 40px;
-  width: 350px;
+  width: auto;
   border-radius: 4px;
   display: "inline-block";
   color: ${(props) => props.theme.color};
@@ -62,7 +63,7 @@ function TextInput(textInputProps: TextInputProps) {
           <Input
             id="textInput"
             type="text"
-            placeholder={"Enter task name"}
+            placeholder={textInputProps.placeholder}
             required
           />
         </TextInputDiv>
