@@ -8,6 +8,7 @@ type TaskCardProps = {
 const CardWrapper = styled.div`
   background-color: ${(props) => props.theme.background};
   padding: 15px;
+  max-width: 280px;
   /* margin: 5px 1px 5px 1px; */
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 8px;

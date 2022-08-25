@@ -8,7 +8,7 @@ const ToggleSwitchBox = styled.div`
   column-gap: 20px;
   background-color: ${(props) => props.theme.backgroundTertiary};
   height: 48px;
-  width: 251px;
+  max-width: 251px;
   left: 24px;
   top: 888px;
   border-radius: 6px;

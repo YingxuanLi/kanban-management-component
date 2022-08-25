@@ -15,7 +15,7 @@ const TextInputWrapper = styled.div`
 const Input = styled.input.attrs({ type: "text" })`
   border: 1px solid rgba(130, 143, 163, 0.25);
   height: 40px;
-  width: 350px;
+  max-width: 350px;
   border-radius: 4px;
   display: "inline-block";
   color: ${(props) => props.theme.color};
