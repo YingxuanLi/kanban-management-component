@@ -1,6 +1,5 @@
-import styled, { useTheme } from "styled-components";
-import SvgIconLightTheme from "icons/IconLightTheme";
-import SvgIconDarkTheme from "icons/IconDarkTheme";
+import styled from "styled-components";
+import { IconLightTheme, IconDarkTheme } from "icons";
 
 const ToggleSwitchBox = styled.div`
   display: flex;
@@ -57,19 +56,16 @@ const Input = styled.input`
   }
 `;
 
-const ToggleSwitch = () => {
-  const currentTheme = useTheme();
-  //   console.log(theme);
-
+const ToggleSwitch = ({ onToggle }: { onToggle: () => void }) => {
   return (
     <ToggleSwitchBox>
-      <SvgIconLightTheme dimension={14} color="#828FA3" />
+      <IconLightTheme dimension={14} color="#828FA3" />
       <Label>
-        <Input type="checkbox" />
+        <Input type="checkbox" onChange={onToggle} />
         <Swicth />
       </Label>
 
-      <SvgIconDarkTheme dimension={14} color="#828FA3" />
+      <IconDarkTheme dimension={14} color="#828FA3" />
     </ToggleSwitchBox>
   );
 };
