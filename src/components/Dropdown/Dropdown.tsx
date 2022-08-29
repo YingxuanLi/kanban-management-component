@@ -8,7 +8,7 @@ const StyledSelect = styled(Select)`
   letter-spacing: 0px;
   text-align: left;
   height: 40px;
-  width: 350px;
+  max-width: 350px;
 `;
 
 const SelectWrapper = styled.div`

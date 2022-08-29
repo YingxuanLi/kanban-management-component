@@ -3,7 +3,7 @@ import { colors } from "../../styles/theme-preval";
 
 const NewColumnWrapper = styled.div`
   height: 814px;
-  width: 280px;
+  max-width: 280px;
   left: 0px;
   top: 0px;
   border-radius: 6px;

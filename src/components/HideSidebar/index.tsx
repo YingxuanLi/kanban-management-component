@@ -1,1 +1,1 @@
-// export {default} from "./HideSidebar";
+export { default } from "./HideSidebar";

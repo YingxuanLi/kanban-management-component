@@ -6,3 +6,4 @@ export { default as NewColumn } from "./NewColumn";
 export { default as TaskCard } from "./TaskCard";
 export { default as TaskInfoCard } from "./TaskInfoCard";
 export { default as ToggleSwitch } from "./ToggleSwitch";
+export { default as HideSidebar } from "./HideSidebar";

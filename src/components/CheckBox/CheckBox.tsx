@@ -6,7 +6,7 @@ type Props = {
 };
 
 const StyledCheckbox = styled.div`
-  width: 350px;
+  max-width: 350px;
   height: 40px;
   border-radius: 4px;
   display: flex;
